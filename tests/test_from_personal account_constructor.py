@@ -21,7 +21,7 @@ class TestFromAccount:
         driver.find_element(*Main_Locators.PERSONAL_ACCOUNT_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Login_Account_Locators.DESIGNER))
         driver.find_element(*Login_Account_Locators.DESIGNER).click()
-        WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element(Main_Locators.PLACE_AN_ORDER_BUTTON, 'Оформить заказ'))
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Main_Locators.PLACE_AN_ORDER_BUTTON))
         assert driver.current_url == MAIN_URL
 
     def test_navigation_from_account_to_logo_success(self, driver):
@@ -37,5 +37,5 @@ class TestFromAccount:
         driver.find_element(*Main_Locators.PERSONAL_ACCOUNT_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Login_Account_Locators.LOGO))
         driver.find_element(*Login_Account_Locators.LOGO).click()
-        WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element(Main_Locators.PLACE_AN_ORDER_BUTTON, 'Оформить заказ'))
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Main_Locators.PLACE_AN_ORDER_BUTTON))
         assert driver.current_url == MAIN_URL
