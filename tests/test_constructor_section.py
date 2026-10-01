@@ -8,13 +8,12 @@ class TestConstructorSection:
     def test_constructor_section(self, driver):
         driver.get(MAIN_URL)
         wait = WebDriverWait(driver, 5)
-        
+
         wait.until(EC.element_to_be_clickable(Main_Locators.SAUCES_TAB)).click()
-        assert wait.until(EC.visibility_of_element_located(Main_Locators.SAUCES_TEXT)).is_displayed()
+        assert len(driver.find_elements(*Main_Locators.SAUCES_TEXT)) > 0
 
         wait.until(EC.element_to_be_clickable(Main_Locators.FILLING_TAB)).click()
-        assert wait.until(EC.visibility_of_element_located(Main_Locators.FILLING_TEXT)).is_displayed()
+        assert len(driver.find_elements(*Main_Locators.FILLING_TEXT)) > 0
 
         wait.until(EC.element_to_be_clickable(Main_Locators.BUN_TAB)).click()
-        assert wait.until(EC.visibility_of_element_located(Main_Locators.BUN_TEXT)).is_displayed()
-
+        assert len(driver.find_elements(*Main_Locators.BUN_TEXT)) > 0
