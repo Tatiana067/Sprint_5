@@ -25,7 +25,7 @@ class Register_Locators: # страница с формой регистраци
     EMAIL_FIELD = (By.XPATH, ".//label[text()='Email']/following-sibling::input") # поле Email
     PASSWORD_FIELD = (By.XPATH, ".//label[text()='Пароль']/following-sibling::input") # поле Пароль
     REGISTER_BUTTON = (By.XPATH, ".//button[text()='Зарегистрироваться']") # кнопка Зарегистрироваться
-    TEXT_LOGIN = (By.XPATH, ".//a(@href='/login')") # текст Войти
+    TEXT_LOGIN = (By.XPATH, "//a[@href='/login']") # текст Войти
     PASSWORD_ERROR = (By.XPATH, ".//*[text()='Некорректный пароль']") # текст Неккоректный пароль
 
 class Forgot_Password_Locators: # страница восстановления пароля
